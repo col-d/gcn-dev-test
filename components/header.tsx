@@ -51,7 +51,7 @@ function classNames(...classes: string[]) {
 
 function getIcon(icon: string) {
   const classes = "block h-6 w-6";
-  
+
   switch (icon) {
     case "home":
       return (
@@ -107,89 +107,89 @@ function getNavLink(item: NavigationLink) {
 }
 
 export const Header = () => {
-    return (
-      <header>
-        {/* Top bar */}
-        <div className="bg-primary h-12 flex items-center pl-2">
-          <div className="w-24">
-            <Image src="/GCNLogoTxt.svg" layout="responsive" width={96} height={48} />
-          </div>
-            <div className="absolute px-2 right-0 flex items-center gap-2">
-              {navButtons.map(button => (
-                <a href={button.href} key={button.name} className="p-1 rounded-md text-sm font-medium bg-white">
-                  {button.name}
-                </a>
-              ))}
-            </div>
+  return (
+    <header>
+      {/* Top bar */}
+      <div className="bg-primary h-12 flex items-center pl-2">
+        <div className="w-24">
+          <Image src="/GCNLogoTxt.svg" layout="responsive" width={96} height={48} />
         </div>
-        
-        {/* Middle navigation bar */}
-        <Disclosure as="nav" className="bg-black h-12">
-          {({ open }) => (
-            <>
-              <div className="relative flex items-center h-12">
-                
-                <div className="absolute left-0 flex items-center sm:hidden">
-                  <Disclosure.Button className="p-2 text-white">
-                    {open ? (
-                      getIcon('x')
-                    ) : (
-                      getIcon('menu')
-                    )}
-                  </Disclosure.Button>
-                </div>
-                
-                <div className="absolute px-2 right-0 flex items-center gap-2">
-                  <Image src="/IconCrc_Facebook.png" width={24} height={24} />
-                  <Image src="/IconCrc_Twitter.png" width={24} height={24} />
-                  <Image src="/IconCrc_Instagram.png" width={24} height={24} />
-                </div>
-                
-                <div className="hidden sm:block sm:ml-2">
-                  <div className="flex gap-2">
-                    {navigationLinks.slice(0, 10).map(item => (
-                      <a
-                        key={item.name}
-                        href={item.href}
-                        className={classNames(
-                          item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-                          'px-3 py-2 rounded-md text-sm font-medium'
-                        )}
-                        aria-current={item.current ? 'page' : undefined}
-                      >
-                        {item.name}
-                      </a>
-                    ))}
-                  </div>
+        <div className="absolute px-2 right-0 flex items-center gap-2">
+          {navButtons.map(button => (
+            <a href={button.href} key={button.name} className="p-1 rounded-md text-sm font-medium bg-white">
+              {button.name}
+            </a>
+          ))}
+        </div>
+      </div>
+
+      {/* Middle navigation bar */}
+      <Disclosure as="nav" className="bg-black h-12">
+        {({ open }) => (
+          <>
+            <div className="relative flex items-center h-12">
+
+              <div className="absolute left-0 flex items-center sm:hidden">
+                <Disclosure.Button className="p-2 text-white">
+                  {open ? (
+                    getIcon('x')
+                  ) : (
+                    getIcon('menu')
+                  )}
+                </Disclosure.Button>
+              </div>
+
+              <div className="absolute px-2 right-0 flex items-center gap-2">
+                <Image src="/IconCrc_Facebook.png" width={24} height={24} />
+                <Image src="/IconCrc_Twitter.png" width={24} height={24} />
+                <Image src="/IconCrc_Instagram.png" width={24} height={24} />
+              </div>
+
+              <div className="hidden sm:block sm:ml-2">
+                <div className="flex gap-2">
+                  {navigationLinks.slice(0, 10).map(item => (
+                    <a
+                      key={item.name}
+                      href={item.href}
+                      className={classNames(
+                        item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
+                        'px-3 py-2 rounded-md text-sm font-medium'
+                      )}
+                      aria-current={item.current ? 'page' : undefined}
+                    >
+                      {item.name}
+                    </a>
+                  ))}
                 </div>
               </div>
-    
-              <Disclosure.Panel className="sm:hidden">
-                <div className="relative bg-black">
-                  <div className="border-b-2 border-gray-900">
-                    {navigationLinks.slice(0, 10).map((item) => (
-                      getNavLink(item)
-                    ))}
-                  </div>
-                  <div className="border-b-4 border-black">
-                    {navigationLinks.slice(10).map((item) => (
-                      getNavLink(item)
-                    ))}
-                  </div>
+            </div>
+
+            <Disclosure.Panel className="sm:hidden">
+              <div className="relative bg-black">
+                <div className="border-b-2 border-gray-900">
+                  {navigationLinks.slice(0, 10).map((item) => (
+                    getNavLink(item)
+                  ))}
                 </div>
-              </Disclosure.Panel>
-            </>
-          )}
-        </Disclosure>
+                <div className="border-b-4 border-black">
+                  {navigationLinks.slice(10).map((item) => (
+                    getNavLink(item)
+                  ))}
+                </div>
+              </div>
+            </Disclosure.Panel>
+          </>
+        )}
+      </Disclosure>
 
-        {/* Bottom/search bar */}
-        <div className="bg-gray-300 h-12 flex pl-2">
-          <input className="border rounded rounded-r-none px-2 my-1 focus:outline-none" type="text" placeholder="Search for videos" />
-          <button className="mr-2 my-1 text-white bg-primary p-2 rounded rounded-l-none">
-            {getIcon('search')}
-          </button>
-        </div>
+      {/* Bottom/search bar */}
+      <div className="bg-gray-300 h-12 flex pl-2">
+        <input className="border rounded rounded-r-none px-2 my-1 focus:outline-none" type="text" placeholder="Search for videos" />
+        <button className="mr-2 my-1 text-white bg-primary p-2 rounded rounded-l-none">
+          {getIcon('search')}
+        </button>
+      </div>
 
-      </header>
-    );
+    </header>
+  );
 }

@@ -18,22 +18,22 @@ const Home: NextPage = () => {
     <div className="lg:flex lg:flex-wrap lg:justify-center lg:gap-2">
 
       <div className="p-3 pb-2 lg:hidden">
-       <span className="text-4xl">Latest videos</span>
+        <span className="text-4xl">Latest videos</span>
       </div>
 
-      <hr className="lg:hidden"/>
+      <hr className="lg:hidden" />
 
       {data.slice(0, 3).map(video => (
-        <Video key={video._id} { ...video } small={false} />
+        <Video key={video._id} {...video} small={false} />
       ))}
 
-      <hr className="lg:hidden"/>
+      <hr className="lg:hidden" />
 
       {data.slice(4).map(video => (
-        <Video key={video._id} { ...video } small={true} />
+        <Video key={video._id} {...video} small={true} />
       ))}
 
-      <hr className="lg:hidden"/>
+      <hr className="lg:hidden" />
 
       <div className="flex justify-center w-full">
         <button className="bg-primary rounded px-3 py-2 m-2 text-white">Show more</button>
