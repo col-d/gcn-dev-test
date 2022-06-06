@@ -23,3 +23,6 @@ yarn dev
 ```
 
 Then open [http://localhost:3000](http://localhost:3000) in a browser.
+
+## Author
+[Colin Davies](https://github.com/col-d)
