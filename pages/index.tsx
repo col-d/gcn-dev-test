@@ -23,14 +23,14 @@ const Home: NextPage = () => {
 
       <hr className="lg:hidden"/>
 
-      {data.slice(0, 3).map((video) => (
-        <Video { ...video } small={false} />
+      {data.slice(0, 3).map(video => (
+        <Video key={video._id} { ...video } small={false} />
       ))}
 
       <hr className="lg:hidden"/>
 
-      {data.slice(4).map((video, ind) => (
-        <Video { ...video } small={true} />
+      {data.slice(4).map(video => (
+        <Video key={video._id} { ...video } small={true} />
       ))}
 
       <hr className="lg:hidden"/>

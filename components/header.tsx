@@ -147,7 +147,7 @@ export const Header = () => {
                 
                 <div className="hidden sm:block sm:ml-2">
                   <div className="flex gap-2">
-                    {navigationLinks.slice(0, 4).map(item => (
+                    {navigationLinks.slice(0, 10).map(item => (
                       <a
                         key={item.name}
                         href={item.href}
@@ -171,7 +171,7 @@ export const Header = () => {
                       getNavLink(item)
                     ))}
                   </div>
-                  <div className="border-b-2 border-black">
+                  <div className="border-b-4 border-black">
                     {navigationLinks.slice(10).map((item) => (
                       getNavLink(item)
                     ))}
